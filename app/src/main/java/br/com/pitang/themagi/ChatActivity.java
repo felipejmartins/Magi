@@ -1,5 +1,6 @@
 package br.com.pitang.themagi;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +15,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -40,6 +46,21 @@ public class ChatActivity extends AppCompatActivity {
         chatList.setLayoutManager(layoutManager);
         chatList.setAdapter(adapter);
         chatList.setHasFixedSize(true);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.github.com")
+                .client(getOkHttpClient(this))
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+    }
+
+    private OkHttpClient getOkHttpClient(Context context) {
+        OkHttpClient.Builder okClientBuilder = new OkHttpClient.Builder();
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel( HttpLoggingInterceptor.Level.BASIC);
+        okClientBuilder.addInterceptor(httpLoggingInterceptor);
+        return okClientBuilder.build();
     }
 
     @OnClick(R.id.send_text_input)

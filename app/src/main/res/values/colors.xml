@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#b7b7b7</color>
+
+    <color name="old_brick">#A22929</color>
+    <color name="crown_of_thorns">#842222</color>
 </resources>

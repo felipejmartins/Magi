@@ -15,16 +15,27 @@
         android:layout_above="@+id/user_input_container"
         android:layout_height="wrap_content"/>
 
+
+
     <RelativeLayout
         android:id="@+id/user_input_container"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/gray"/>
+
         <EditText
             android:id="@+id/user_text_input"
             android:layout_toLeftOf="@+id/send_text_input"
             android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:hint="@string/chat_user_input_hint"
             android:layout_height="wrap_content" />
 
         <ImageButton
@@ -33,11 +44,11 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:padding="15dp"
+            android:backgroundTint="@color/old_brick"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/ic_send_vector"
             android:layout_height="wrap_content" />
 
     </RelativeLayout>
-
 </RelativeLayout>

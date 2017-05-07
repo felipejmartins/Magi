@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TheMagi</string>
+
+    <string name="chat_user_input_hint">Escreva uma mensagem</string>
 </resources>

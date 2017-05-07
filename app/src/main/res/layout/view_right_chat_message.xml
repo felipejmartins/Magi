@@ -8,24 +8,14 @@
     android:layout_marginTop="10dp"
     tools:context="br.com.pitang.themagi.ChatActivity">
 
-    <ImageView
-        android:id="@+id/incoming_background"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/shape_bg_outcoming_bubble"
-        />
-
     <TextView
-        android:layout_marginRight="8dp"
-        android:layout_alignParentRight="true"
         android:id="@+id/message_ballon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_bg_bubble"
-        android:padding="5dp"
+        android:background="@drawable/msg_out"
         android:gravity="right"
-        android:textColor="@color/white"
-        tools:text="Curabitur sollicitudin, est in dignissim commodo,"/>
+        android:textColor="@color/black"
+        android:layout_alignParentRight="true"
+        tools:text="Curabitur sollicitudin, est in dignissim commod"/>
 
 </RelativeLayout>
